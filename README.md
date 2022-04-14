@@ -95,8 +95,8 @@ There is another important functionality: We can pass to constructor for string 
 ```cpp
 Date fstring_date{"07/21/2007", "%m/%d/%Y"}; //creates a string date in the format: month/day/year
 
-//WE CAN CHANGE SEPARATORS TOO. Accepted separators are: ' ', /, -, ., :  We can mix these:
-Date fstring_date{"07/21/2007", "%m.%d:%Y %H-%M-%S"}; //format month.day:year hour-minute-second
+//WE CAN CHANGE DATE FORMAT TOO. Accepted separators are: ' ', /, -, ., :  We can mix these:
+Date fstring_date{"07/21/2007 00:00:00", "%m/%d/%Y %H:%M:%S"}; //format month.day:year hour-minute-second
 ```
 The format qualifiers are:
 - `%d` for day
@@ -108,6 +108,14 @@ The format qualifiers are:
 
 **Other qualifiers will simply be ignored.**
 
+In addition we can use other separators for the date string and the format string, these don't have to be the same, they can even be mixed.
+Accepted separators are: ' ', /, -, ., :  This is an example:
+```cpp
+Date d2{"07-21-2007 00:00-00", "%m-%d-%Y" %H:%M-%S};
+std::cout << d2 << std::endl;
+```
+Note that when a format string isn't specified , the **default format** is `%d/%m/%Y %H:%M:%S` therefore different separators aren't accepted and they will simply be ignored. For use different separators/qualifiers **we must specify the string format**.
+
 > ***Note that the date output will automatically assume the format specified in initialization if one has been specified, otherwise the default will be adopted: `%d/%m/%Y %H:%M:%S`***
 
 > ***The format can't be changed after date initizialization***
@@ -115,6 +123,17 @@ The format qualifiers are:
 > ***IMPORTANT: The format of the current date created with the default constructor and the format for an Error Date object can't be speicified, the default will be adopted: `%d/%m/%Y %H/%M/%S`***
 
 > ***For get the format of a date we can use the membrer function `get_format()`***
+
+
+**Let's see an example that summarize everything we said:**
+```cpp
+#include <iostream>
+#include "AocDateLib.h"
+
+int main() {
+  Date d1{}, d2{"21/07/2007"};
+  Date d3{"21-07-2007 30.45.12"};
+  Date d4{"08:21:2007 00 00 00", "
 
 
 
