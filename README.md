@@ -93,8 +93,19 @@ Obviusly this isn't the only way for create dates, we can use other 2 ways:
 
 There is another important functionality: We can pass to constructor for string dates a second parameter that specifies the format of the string date:
 ```cpp
+Date fstring_date{"07/21/2007", "%m/%d/%Y"}; //creates a string date in the format: month/day/year
 
+//WE CAN CHANGE SEPARATORS TOO. Accepted separators are: ' ', /, -, ., :  We can mix these:
+Date fstring_date{"07/21/2007", "%m.%d:%Y %H-%M-%S"}; //format month.day:year hour-minute-second
 ```
+The format qualifiers are:
+- `%d` for day
+- `%m` for month
+- `%Y` for year
+- `%H` for hour
+- `%M` for minute
+- `%S` for second
+Other qualifiers will simply be ignored.
 
 
 
