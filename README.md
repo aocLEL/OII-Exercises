@@ -10,6 +10,7 @@ Before venturing into the maze of this precious library, let's take a quick look
   - [***Assumptions***](#assumptions)
   - [***Are you ready?***](#ready)
 - [***The Date class: heart of the library***](#the-date-class)
+  - [***Create Dates***](#create-dates)
 - [***Title5***](#title5)
 - [***Title6***](#title6)
 
