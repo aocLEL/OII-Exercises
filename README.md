@@ -49,7 +49,7 @@ A more in-depth guide can be found at [this link](https://domiyanyue.medium.com/
 ## Assumptions
 throughout this documentation we will refer to some **keywords** regarding the library.
 List these below:
-- ***Error Date object*** --> This object is a Date corrisponding to **1/01/1900**. It will be returned when the desired date is not considered valid or when certain operations are not possible on it. **Note that the format of an Error Date object is always `%d/%m/%Y %H:%M:%S`.
+- ***Error Date object*** --> This object is a Date corrisponding to **1/01/1900**. It will be returned when the desired date is not considered valid or when certain operations are not possible on it.
 - **Limits of the library** --> this is not precisely a keyword but It's good immediately illustrate the limitations of the library in terms of date management. The minimum valid date is **1/01/1900 00:00:00** while the maximum valid date is, on 64bit Windows, **31/12/2999 23:59:59** while on other operating systems is **31/12/2037 23:59:59** due to the limitations of the time library and the lack of support for higher dates on unix like systems. I am not ruling out that an update to the library may arrive in the future that adds this support.
 
 
@@ -111,6 +111,8 @@ The format qualifiers are:
 > ***Note that the date output will automatically assume the format specified in initialization if one has been specified, otherwise the default will be adopted: `%d/%m/%Y %H:%M:%S`***
 
 > ***The format can't be changed after date initizialization***
+
+> ***IMPORTANT: The format of the current date created with the default constructor and the format for an Error Date object can't be speicified, the default will be adopted: `%d/%m/%Y %H/%M/%S`***
 
 > ***For get the format of a date we can use the membrer function `get_format()`***
 
