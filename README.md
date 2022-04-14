@@ -105,6 +105,7 @@ The format qualifiers are:
 - `%H` for hour
 - `%M` for minute
 - `%S` for second
+
 **Other qualifiers will simply be ignored.**
 
 > ***Note that the date output will automatically assume the format specified in initialization if one has been specified, otherwise the default will be adopted: `%d/%m/%Y %H:%M:%S`***
