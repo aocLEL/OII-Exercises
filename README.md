@@ -114,7 +114,15 @@ Accepted separators are: ' ', /, -, ., :  This is an example:
 Date d2{"07-21-2007 00:00-00", "%m-%d-%Y %H:%M-%S"};
 std::cout << d2 << std::endl;
 ```
-Note that when a format string isn't specified , the **default format** is `%d/%m/%Y %H:%M:%S` therefore different separators aren't accepted and they will simply be ignored. For use different separators/qualifiers **we must specify the string format**.
+Note that when a format string isn't specified , the **default format** is `%d/%m/%Y %H:%M:%S` therefore different separators aren't accepted and they will simply be ignored throwing a Date Error 3. For use different separators/qualifiers **we must specify the string format**:
+```cpp
+Date d1{"21-07-2007"}; //Invalid date
+Date d2{"21/07/2007"}; //OK
+Date d3{"21-07-2007", "%d-%m-%Y"}; //OK
+Date d4{"07/21.2007 00-00:00", "%m-%d/%Y %H-%M:%S"}; //Invalid date, string not match the format(different separators)
+Date d5{"07-21-2007", "%m-%d-%Y %H.%M.%S"}; //OK, the part of the string match the her format part(07-21-2007 with %m-%d-%Y)
+
+```
 
 > ***Note that the date output will automatically assume the format specified in initialization if one has been specified, otherwise the default will be adopted: `%d/%m/%Y %H:%M:%S`***
 
