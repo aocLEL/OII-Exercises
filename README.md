@@ -11,7 +11,7 @@ Before venturing into the maze of this precious library, let's take a quick look
   - [***Are you ready?***](#ready)
 - [***The Date class: heart of the library***](#the-date-class)
   - [***Create Dates***](#create-dates)
-- [***Title5***](#title5)
+  - [***Getting and setting date informations***](#getting-and-setting-date-informations)
 - [***Title6***](#title6)
 
 <br>
@@ -156,4 +156,32 @@ int main() {
 > ***Note that in the last case the custom format specifies only the day, month and year therefore it will not be possible to print the other data as well. For this reason I always recommend using a complete format string.***
 
 
+<br>
+
+## Getting and setting date informations
+
+after creating a date we could want to getting the time values for using these in expressions , for example, for compare the day of a date with that of another. Well, AocDateLib provides , for each time value a getter member function (of the Date class). These are listed follow:
+- `get_year()` --> returns the year
+- `get_mon()`  --> returns the month
+- `get_day()`  --> returns the day
+- `get_hour()` --> returns the hour
+- `get_min()`  --> returns the minute
+- `get_sec()`  --> returns the second
+
+Let's see this functions in the following snippet:
+```cpp
+Date new_date{}; //initzialize the Date object with the current day
+unsigned int day{new_date.get_day()}, mon{new_date.get_mon()};
+if(day > 14) std::cout << "The second week of the current month is passed" << std::endl;
+if(mon > 6) std::cout << You've passed the half of the year" << std::endl;
+```
+
+
+Obviulsy we would also can modify the time values such as the day or the year. Well , AocDateLib provide for each time value a setter member function too. These are listed follwing:
+- `set_year(unsigned int year)`   --> set the year to `year`
+- `set_mon(unsigned int month)`   --> set the month to `month`
+- `set_day(unsigned int day)`     --> set the day to `day`
+- `set_hour(unsigned int hour)`   --> set the hour to `hour`
+- `set_min(unsigned int minute)`  --> set the minute to `minute`
+- `set_sec(unsigned int second)`  --> set the second to `second`
 
