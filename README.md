@@ -111,7 +111,7 @@ The format qualifiers are:
 In addition we can use other separators for the date string and the format string, these don't have to be the same, they can even be mixed.
 Accepted separators are: ' ', /, -, ., :  This is an example:
 ```cpp
-Date d2{"07-21-2007 00:00-00", "%m-%d-%Y" %H:%M-%S};
+Date d2{"07-21-2007 00:00-00", "%m-%d-%Y %H:%M-%S"};
 std::cout << d2 << std::endl;
 ```
 Note that when a format string isn't specified , the **default format** is `%d/%m/%Y %H:%M:%S` therefore different separators aren't accepted and they will simply be ignored. For use different separators/qualifiers **we must specify the string format**.
