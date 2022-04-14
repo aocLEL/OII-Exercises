@@ -12,7 +12,7 @@ Before venturing into the maze of this precious library, let's take a quick look
 - [***The Date class: heart of the library***](#the-date-class)
   - [***Create Dates***](#create-dates)
   - [***Getting and setting date informations***](#getting-and-setting-date-informations)
-- [***Title6***](#title6)
+  - [***Dates with logical operators***](#dates-with-logical-operators)
 
 <br>
 <br>
@@ -167,6 +167,7 @@ after creating a date we could want to getting the time values for using these i
 - `get_hour()` --> returns the hour
 - `get_min()`  --> returns the minute
 - `get_sec()`  --> returns the second
+- `get_ts()`   --> returns the timestamp of the date(negative for dates before 1/01/1970)
 
 Let's see this functions in the following snippet:
 ```cpp
@@ -184,6 +185,7 @@ Obviulsy we would also can modify the time values such as the day or the year. W
 - `set_hour(unsigned int hour)`   --> set the hour to `hour`
 - `set_min(unsigned int minute)`  --> set the minute to `minute`
 - `set_sec(unsigned int second)`  --> set the second to `second`
+- `set_now()` --> set the date to the current date
 If the value given to the setter is invalid , an DATE ERROR 2 is thrown and the date keep the same.
 ```cpp
 Date new_date{"21/07/2007"};
@@ -192,3 +194,6 @@ std::cout << new_date << std::endl; //outputs: 29/07/2007 00:00:00
 new_date.set_sec(90); //DATE ERROR 3, invalid value, 90 isn't a valid value for second
 ```
 
+<br>
+
+## Dates with logical operators
