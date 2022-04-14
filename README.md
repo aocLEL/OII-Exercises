@@ -94,8 +94,6 @@ Obviusly this isn't the only way for create dates, we can use other 2 ways:
 There is another important functionality: We can pass to constructor for string dates a second parameter that specifies the format of the string date:
 ```cpp
 Date fstring_date{"07/21/2007", "%m/%d/%Y"}; //creates a string date in the format: month/day/year
-
-//WE CAN CHANGE DATE FORMAT TOO:
 Date fstring_date2{"07/21/2007 00:00:00", "%m/%d/%Y %H:%M:%S"}; //format: month/day/year hour:minute:second
 ```
 The format qualifiers are:
@@ -116,7 +114,7 @@ std::cout << d2 << std::endl;
 ```
 Note that when a format string isn't specified , the **default format** is `%d/%m/%Y %H:%M:%S` therefore different separators aren't accepted and they will simply be ignored throwing a Date Error 3. For use different separators/qualifiers **we must specify the string format**:
 ```cpp
-Date d1{"21-07-2007"}; //Invalid date
+Date d1{"21-07-2007"}; //Invalid date, string not match her default format part: %d/%m/%Y 
 Date d2{"21/07/2007"}; //OK
 Date d3{"21-07-2007", "%d-%m-%Y"}; //OK
 Date d4{"07/21.2007 00-00:00", "%m-%d/%Y %H-%M:%S"}; //Invalid date, string not match the format(different separators)
@@ -136,12 +134,23 @@ Date d5{"07-21-2007", "%m-%d-%Y %H.%M.%S"}; //OK, the part of the string match t
 **Let's see an example that summarize everything we said:**
 ```cpp
 #include <iostream>
+#include <string>
 #include "AocDateLib.h"
 
 int main() {
-  Date d1{}, d2{"21/07/2007"};
-  Date d3{"21-07-2007 30.45.12"};
-  Date d4{"08:21:2007 00 00 00", "
+  Date new_date{2021, 1, 1}; //date 1/01/2021 00:00:00, default format
+  Date new_date{2021, 02, 1, 0, 0, 0, "%m-%d-%Y %H.%M.%S"}; //date 02-1-2021 00.00.00 , custom format
+  
+  Date d1{}, d2{"21/07/2007"}; //current date and custom string date, match with default format
+  Date d3{"21-07-2007 20.45.12", "%d-%m-%Y %H.%M.%S"}; //the same date 20h 45m 12s after, match the custom format
+  Date d4{"08:21:2007 00 00 00"}; //same date 1 day after. This don't match de default format, DATE ERROR 3, date become 1/01/1900 00:00:00
+  
+  std::string date_str{"21-07-2007"}, format_str{"%d-%m-%Y"};
+  Date d5{date_str, format_str}; //date 21-07-2007 with custom format. With std::string objects
+  
+  std::cout << d5 << std::endl; //outputs: 21-07-2007 00:00:00
+  return 0;
+}
 ```
 
 
