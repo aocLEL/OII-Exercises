@@ -8,9 +8,8 @@ Before venturing into the maze of this precious library, let's take a quick look
 - [***Starting with AocDateLib***](#starting-with-aocdatelib)
   - [***How to use it***](#how-to-use-it)
   - [***Assumptions***](#assumptions)
-  - [***The Date class: heart of the library***](#the-date-class)
-  - Hello3
-- [***Title4***](#title4)
+  - [***Are you ready?***](#ready)
+- [***The Date class: heart of the library***](#the-date-class)
 - [***Title5***](#title5)
 - [***Title6***](#title6)
 
