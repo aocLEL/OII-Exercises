@@ -65,4 +65,14 @@ The Date class is the heart of this library. this class is what we create and ma
 <br>
 
 ## Create dates
+AocDateLib provides different ways for create dates. First of all we must obviusly create a new Date object:
+```cpp
+Date new_date{}; //new Date object that calls default constructor
+```
+This statement creates a new Date object calling the default constructor of the class. This constructor sets the date to the current date, in fact we can
+output the date simply using on it the `<<` operator:
+```cpp
+Date new_date{};
+std::cout << new_date << std::endl; //outputs the current date
+```
 
