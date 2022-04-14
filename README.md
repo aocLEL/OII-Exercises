@@ -153,5 +153,7 @@ int main() {
 }
 ```
 
+> ***Note that in the last case the custom format specifies only the day, month and year therefore it will not be possible to print the other data as well. For this reason I always recommend using a complete format string.***
+
 
 
