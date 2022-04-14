@@ -36,6 +36,7 @@ g++ -o myprogram mymainfile.o AocDateLib.so
 ./myprogram
 ```
 > **It's important to compile in C++20 for the correct functioning of the library, in g++ compiler the flag for do this is ```-std=c++20``` but can change dipendently from the compiler.**
+
 A more in-depth guide can be found at [this link](https://domiyanyue.medium.com/c-development-tutorial-4-static-and-dynamic-libraries-7b537656163e).
 
 
