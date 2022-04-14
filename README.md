@@ -14,10 +14,15 @@ Before venturing into the maze of this precious library, let's take a quick look
 - [***Title5***](#title5)
 - [***Title6***](#title6)
 
-## What is AocDateLib?
+<br>
+<br>
+
+# What is AocDateLib?
 AocDateLib is a efficent way for ***manage dates in C++***. It's based on the C/C++ time library for create dates and timestamps.
 I've created this library because I think that the way in which we can work with dates in the time library is difficult to understand at first impact and it's not very intuitive. In addition this library allow take advantage from C++ functionalities(ex. classes) at the best. 
 Well... It sounds interesting!! So let's going to explore this library!!
+
+<br>
 
 # Starting With AocDateLib
 
