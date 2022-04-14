@@ -8,7 +8,7 @@ Before venturing into the maze of this precious library, let's take a quick look
 - [***Starting with AocDateLib***](#starting-with-aocdatelib)
   - [***How to use it***](#how-to-use-it)
   - [***Assumptions***](#assumptions)
-  - Hello2
+  - [***The Date class: heart of the library***](#the-date-class)
   - Hello3
 - [***Title4***](#title4)
 - [***Title5***](#title5)
@@ -53,5 +53,16 @@ List these below:
 - **Limits of the library** --> this is not precisely a keyword but It's good immediately illustrate the limitations of the library in terms of date management. The minimum valid date is **1/01/1900 00:00:00** while the maximum valid date is, on 64bit Windows, **31/12/2999 23:59:59** while on other operating systems is **31/12/2037 23:59:59** due to the limitations of the time library and the lack of support for higher dates on unix like systems. I am not ruling out that an update to the library may arrive in the future that adds this support.
 
 
+## Ready?
+So , after this brief two sections we are ready to start with this library, Good luck!!
 
+<br>
+<br>
+
+# The Date class
+The Date class is the heart of this library. this class is what we create and manage our dates with. Let's not get lost in small talk and let's see now how to best use it to create our dates.
+
+<br>
+
+## Create dates
 
