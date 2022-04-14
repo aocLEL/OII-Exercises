@@ -186,6 +186,7 @@ Obviulsy we would also can modify the time values such as the day or the year. W
 - `set_min(unsigned int minute)`  --> set the minute to `minute`
 - `set_sec(unsigned int second)`  --> set the second to `second`
 - `set_now()` --> set the date to the current date
+
 If the value given to the setter is invalid , an DATE ERROR 2 is thrown and the date keep the same.
 ```cpp
 Date new_date{"21/07/2007"};
