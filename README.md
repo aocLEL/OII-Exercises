@@ -75,4 +75,11 @@ output the date simply using on it the `<<` operator:
 Date new_date{};
 std::cout << new_date << std::endl; //outputs the current date
 ```
+Obviusly this isn't the only way for create dates, we can use other 2 ways:
+ - We can create dates manually specifing all time datas(year, month, day, hour, minute, second):
+ ```cpp
+ Date custom_date{2022, 03, 27, 22, 32, 48};
+ std::cout << custom_date << std::endl; //outputs: 27/03/2022 22:32:48
+ ```
+ - We can create dates form a string:
 
