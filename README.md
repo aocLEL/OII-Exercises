@@ -81,5 +81,20 @@ Obviusly this isn't the only way for create dates, we can use other 2 ways:
  Date custom_date{2022, 03, 27, 22, 32, 48};
  std::cout << custom_date << std::endl; //outputs: 27/03/2022 22:32:48
  ```
+ We can omit last three values(hour, minute, second), in this case they assume the value 0 by default
  - We can create dates form a string:
+ ```cpp
+ Date string_date{"21/07/2007"}; // hour, minute and second become 0 by default
+ std::cout << string_date << std::endl; //outputs: 21/07/2007 00:00:00
+ ```
+ We can give to constructor either a std::string object or a c-like string.
+ 
+> Note that if a time value or string is invalid, the date become a [***Error Date object***](#assumptions).
+
+There is another important functionality: We can pass to constructor for string dates a second parameter that specifies the format of the string date:
+```cpp
+
+```
+
+
 
