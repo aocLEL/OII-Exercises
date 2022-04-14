@@ -148,7 +148,7 @@ int main() {
   std::string date_str{"21-07-2007"}, format_str{"%d-%m-%Y"};
   Date d5{date_str, format_str}; //date 21-07-2007 with custom format. With std::string objects
   
-  std::cout << d5 << std::endl; //outputs: 21-07-2007 00:00:00
+  std::cout << d5 << std::endl; //outputs: 21-07-2007
   return 0;
 }
 ```
