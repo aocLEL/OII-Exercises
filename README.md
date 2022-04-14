@@ -96,7 +96,7 @@ There is another important functionality: We can pass to constructor for string 
 Date fstring_date{"07/21/2007", "%m/%d/%Y"}; //creates a string date in the format: month/day/year
 
 //WE CAN CHANGE DATE FORMAT TOO:
-Date fstring_date{"07/21/2007 00:00:00", "%m/%d/%Y %H:%M:%S"}; //format: month/day/year hour:minute:second
+Date fstring_date2{"07/21/2007 00:00:00", "%m/%d/%Y %H:%M:%S"}; //format: month/day/year hour:minute:second
 ```
 The format qualifiers are:
 - `%d` for day
