@@ -218,3 +218,14 @@ if(d1 == "21/07/2007") std::cout << "You were born on 21st July 2007" << std::en
 <br>
 
 ## Dates with arithmetic operators
+
+AocDateLib also supports some arithmetic operators(`+`, `-`, `+=`, `-=`). We can use this operators for adding/substructing a time value from a given date. The `date_literals` namespace defines the literals corrisponding to all time values, in particulary:
+- `_y`  --> literal that identifies a year(especially a period of 365 days)
+- `_m`  --> literal that identifies a month(especially a period of 30 days)
+- `_d`  --> literal that identifies a day
+- `_h`  --> literal that identifies an hour
+- `_M`  --> literal that identifies a minute
+- `_s`  --> literal that identifies a second
+
+We just have to add the value corrisponding to the specified literals for add/subtruct a valid time value:
+
