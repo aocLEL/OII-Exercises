@@ -12,7 +12,7 @@ Before venturing into the maze of this precious library, let's take a quick look
 - [***The Date class: heart of the library***](#the-date-class)
   - [***Create Dates***](#create-dates)
   - [***Getting and setting date informations***](#getting-and-setting-date-informations)
-  - [***Dates with logical operators***](#dates-with-logical-operators)
+  - [***Dates with comparison operators***](#dates-with-comparison-operators)
 
 <br>
 <br>
@@ -197,4 +197,24 @@ new_date.set_sec(90); //DATE ERROR 3, invalid value, 90 isn't a valid value for 
 
 <br>
 
-## Dates with logical operators
+## Dates with comparison operators
+AocDateLib support all comparison operators(`<`, `>`, `<=`, `>=`, `==`, `!=`) on Date objects in two different ways:
+- Date to Date, comparing two dates objects:
+```cpp
+Date d1{"21/07/2007"}, d2{"01/01/2000"};
+if(d1 < d2) std::cout << "You were born before 2000" << std::endl;
+else std::cout << "You was born after 2000" << std::endl;
+
+if(d2 != d1) std::cout << "You weren't born on 01/01/2000" << std::endl;
+```
+- Date to date string, for comparing Date object with a date string:
+```cpp
+Date d1{"21/07/2007"};
+if(d1 == "21/07/2007") std::cout << "You were born on 21st July 2007" << std::endl;
+```
+
+> ***Note that the date string will take the same format of the Date object compared***
+
+<br>
+
+## Dates with arithmetic operators
