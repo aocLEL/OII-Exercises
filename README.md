@@ -233,6 +233,8 @@ AocDateLib also supports some arithmetic operators(`+`, `-`, `+=`, `-=`). We can
 We just have to add the value corrisponding to the specified literals for add/subtruct a valid time value:
 
 ```cpp
+using namespace date_literals;
+
 //adds 2 years to the date
 Date d{"21/07/2007"};
 d += 2_y;
