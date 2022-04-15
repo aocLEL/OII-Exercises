@@ -13,6 +13,7 @@ Before venturing into the maze of this precious library, let's take a quick look
   - [***Create Dates***](#create-dates)
   - [***Getting and setting date informations***](#getting-and-setting-date-informations)
   - [***Dates with comparison operators***](#dates-with-comparison-operators)
+  - [***Dates with arithmetic operators***](#dates-with-arithmetic-operators)
 
 <br>
 <br>
@@ -215,6 +216,8 @@ if(d1 == "21/07/2007") std::cout << "You were born on 21st July 2007" << std::en
 
 > ***Note that the date string will take the same format of the Date object compared***
 
+> ***Note that if the date string is invalid this will be treated as if it were an [Error Date object](#assumptions)***
+
 <br>
 
 ## Dates with arithmetic operators
@@ -228,4 +231,20 @@ AocDateLib also supports some arithmetic operators(`+`, `-`, `+=`, `-=`). We can
 - `_s`  --> literal that identifies a second
 
 We just have to add the value corrisponding to the specified literals for add/subtruct a valid time value:
+
+```cpp
+//adds 2 years to the date
+Date d{"21/07/2007"};
+d += 2_y;
+std::cout << d << std::endl; //outputs: 20/07/2007 00:00:00, (2008 is bissextile)
+Date new_date{d + 20_d + 2_h};
+std::cout << days << std::endl; //outputs: 10/08/2007 02:00:00
+```
+
+> ***Note that if the resulting date is invalid the date automatically becomes an [Error Date object](#assumptions)***
+
+> ***!!!IMPORTANT!!! for timestamp issues do operations on dates before 01/01/1970 isn't possible, this causes the behavior described above***
+
+
+
 
