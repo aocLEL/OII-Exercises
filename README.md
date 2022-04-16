@@ -14,6 +14,7 @@ Before venturing into the maze of this precious library, let's take a quick look
   - [***Getting and setting date informations***](#getting-and-setting-date-informations)
   - [***Dates with comparison operators***](#dates-with-comparison-operators)
   - [***Dates with arithmetic operators***](#dates-with-arithmetic-operators)
+- [***Working with Date arrays***](#working-with-date-arrays)
 
 <br>
 <br>
@@ -247,6 +248,14 @@ std::cout << days << std::endl; //outputs: 10/08/2007 02:00:00
 
 > ***!!!IMPORTANT!!! for timestamp issues do operations on dates before 01/01/1970 isn't possible, this causes the behavior described above***
 
+
+# Working with Date arrays
+AocDateLib also provides some utility functions for working with Date objects arrays, these functions are defined in the `date_array` namespace.
+This namespace is constantly evolving, so new features will be added soon. All these functions accepts and an std::span<> container to allow functions to work with any main kind of array(c-style arrays, `std::vector<>` containers, `std::array<>` containers and `std::span<>` containers)
+- `size_t get_min(const std::span<const Date>&& date_arr, const size_t s_index = 0)` --> returns the index corresponding to the minumum Date in the array
+- `size_t get_max(const std::span<const Date>&& date_arr, const size_t s_index = 0)` --> returns the index corresponding to the maximum Date in the array
+- `size_t find_date(const std::span<const Date>&& date_arr, const Date &date, const size_t s_index = 0)` --> returns the index corresponding to the first element in the array equal to the Date object passed
+- `size_t find_date(const std::span<const Date>&& date_arr, const std::string& string_date, const size_t s_index = 0, const std::string format = "%d/%m/%Y %H:%M:%S")` --> overload of `find_date` above. 
 
 
 
