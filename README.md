@@ -157,6 +157,14 @@ int main() {
 
 > ***Note that in the last case the custom format specifies only the day, month and year therefore it will not be possible to print the other data as well. For this reason I always recommend using a complete format string.***
 
+> ***For checking if a date string is valid we can use the static function `check_date_string`, this accepts two parameters, the string and the (optional)format that by default will be `%d/%m/%Y %H/%M/%S`***
+```cpp
+std::string date;
+std::cin >> date;
+if(!check_date_string(date)) std::cout << "Invalid date" << std::endl;
+```
+> ***Note that is also considered an invalid date `1/01/1900` as it indicates a [Error Date object](#assumptions)*** 
+
 
 <br>
 
@@ -257,6 +265,7 @@ This namespace is constantly evolving, so new features will be added soon. All t
 - `size_t find_date(const std::span<const Date>&& date_arr, const Date &date, const size_t s_index = 0)` --> returns the index corresponding to the first element in the array equal to the Date object passed
 - `size_t find_date(const std::span<const Date>&& date_arr, const std::string& string_date, const size_t s_index = 0, const std::string format = "%d/%m/%Y %H:%M:%S")` --> overload of `find_date` above. Indeed of the Date object, this uses a date_string for searching the date. We also can specify the format of the date string. If nothing is specified the default format will be applied.
 - `std::vector<Date> get_dates(const std::span<Date>&& date_arr, const size_t year, const size_t month = npos, const size_t day = npos, const size_t hour = npos, const size_t minute = npos, const size_t second = npos, const size_t s_index = 0)` --> returns a `std::vector<>` container within Date objects that match the given parameters. We've need to specify at least the year. In this case the function returns a `std::vector` within all Date objects with year equal to the passed value.
+Note that all functions accept a default parameter index that specifies the starting index for the function.
 
 > ***the default value for not specifying a time parameter is the constant `npos`, defined in `date_array` namespace***
 
@@ -275,6 +284,14 @@ do{
   char ch;
   std::cin >> ch;
 } while(ch != 'n');
+std::cout << "Min date: " << date_vect.at(date_array::get_min(date_vect)) << std::endl;
+std::cout << "Max date: " << date_vect.at(date_array::get_max(date_vect)) << std::endl;
+Date to_find{"21/07/2007"};
+unsigned int index{date_array::find_date(date_vect, to_find)};
+if(index != date_array::npos) std::cout << "Date found at position: " << index << std::endl;
+std::vector selected_dates{date_array::get_dates(date_vect, 2000)};
+std::cout << "Dates in 2000 are: " << std::endl;
+for(auto x : selected_dates) std::cout << x << std::endl;
 ```
 
 
