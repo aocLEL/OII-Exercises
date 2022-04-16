@@ -258,5 +258,24 @@ This namespace is constantly evolving, so new features will be added soon. All t
 - `size_t find_date(const std::span<const Date>&& date_arr, const std::string& string_date, const size_t s_index = 0, const std::string format = "%d/%m/%Y %H:%M:%S")` --> overload of `find_date` above. Indeed of the Date object, this uses a date_string for searching the date. We also can specify the format of the date string. If nothing is specified the default format will be applied.
 - `std::vector<Date> get_dates(const std::span<Date>&& date_arr, const size_t year, const size_t month = npos, const size_t day = npos, const size_t hour = npos, const size_t minute = npos, const size_t second = npos, const size_t s_index = 0)` --> returns a `std::vector<>` container within Date objects that match the given parameters. We've need to specify at least the year. In this case the function returns a `std::vector` within all Date objects with year equal to the passed value.
 
+> ***the default value for not specifying a time parameter is the constant `npos`, defined in `date_array` namespace***
+
+> ***In the case of find_date functions , `npos` will be returned if there isn't a Date object equal to the one passed(Date object/date string)***
+
+Let's see an example:
+```cpp
+std::vector<Date> date_vect;
+do{
+  std::string new_string_date;
+  do {
+    std::cin >> new_string_date;
+  } while(!check_date(new_string_date));
+  date_vect.push(Date{new_string_date});
+  std::cout << "Continue? ";
+  char ch;
+  std::cin >> ch;
+} while(ch != 'n');
+```
+
 
 
