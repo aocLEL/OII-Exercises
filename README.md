@@ -15,6 +15,7 @@ Before venturing into the maze of this precious library, let's take a quick look
   - [***Dates with comparison operators***](#dates-with-comparison-operators)
   - [***Dates with arithmetic operators***](#dates-with-arithmetic-operators)
 - [***Working with Date arrays***](#working-with-date-arrays)
+- [***Errors***](#errors)
 
 <br>
 <br>
@@ -293,6 +294,16 @@ std::vector selected_dates{date_array::get_dates(date_vect, 2000)};
 std::cout << "Dates in 2000 are: " << std::endl;
 for(auto x : selected_dates) std::cout << x << std::endl;
 ```
+<br>
+<br>
+
+# Errors
+For now, AocDateLib provides three errors, these are listed following:
+  - ***DATE ERROR 1, INVALID STRING DATE*** --> this error says that the string date passed to a constructor (or functions that require this) is invalid.
+  - ***DATE ERROR 2, INVALID TIME VALUE*** --> this error says that the time value passed to setter functions is invalid.
+  - ***DATE ERROR 3, DATE STRING NOT MATCH FORMAT STRING*** --> this error says that the string date passed to a constructor don't match the format string specified.
+
+
 
 
 
