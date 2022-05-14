@@ -276,6 +276,7 @@ Note that all functions accept a default parameter index that specifies the star
 Let's see an example:
 ```cpp
 std::vector<Date> date_vect;
+char ch;
 do{
   std::string new_string_date;
   bool is_valid{true};
@@ -284,9 +285,8 @@ do{
     std::cin >> new_string_date;
     if(!is_valid) std::cout << "Invalid date" << std::endl;
   } while(!is_valid);
-  date_vect.push(Date{new_string_date});
+  date_vect.push_back(Date{new_string_date});
   std::cout << "Continue? ";
-  char ch;
   std::cin >> ch;
 } while(ch != 'n');
 std::cout << "Min date: " << date_vect.at(date_array::get_min(date_vect)) << std::endl;
