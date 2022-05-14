@@ -278,9 +278,12 @@ Let's see an example:
 std::vector<Date> date_vect;
 do{
   std::string new_string_date;
+  bool is_valid{true};
   do {
+    std::cout << "Insert date: ";
     std::cin >> new_string_date;
-  } while(!check_date(new_string_date));
+    if(!is_valid) std::cout << "Invalid date" << std::endl;
+  } while(!is_valid);
   date_vect.push(Date{new_string_date});
   std::cout << "Continue? ";
   char ch;
