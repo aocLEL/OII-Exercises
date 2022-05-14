@@ -16,6 +16,7 @@ Before venturing into the maze of this precious library, let's take a quick look
   - [***Dates with arithmetic operators***](#dates-with-arithmetic-operators)
 - [***Working with Date arrays***](#working-with-date-arrays)
 - [***Errors***](#errors)
+- [***Future updates and Bugs***](#future-updates-and-bugs)
 
 <br>
 <br>
@@ -302,6 +303,22 @@ For now, AocDateLib provides three errors, these are listed following:
   - ***DATE ERROR 1, INVALID STRING DATE*** --> this error says that the string date passed to a constructor (or functions that require this) is invalid.
   - ***DATE ERROR 2, INVALID TIME VALUE*** --> this error says that the time value passed to setter functions is invalid.
   - ***DATE ERROR 3, DATE STRING NOT MATCH FORMAT STRING*** --> this error says that the string date passed to a constructor don't match the format string specified.
+
+<br>
+<br>
+
+# Future updates and Bugs
+AocDateLib isn't finished, It's constantly being updated, You can check the latest version in the title of this documentation.
+We care about your feedback on how to improve the library and how to make it as useful and functional as possible and for this reason We ask you to report any ideas and advice by sending an email to the following address:
+> **accyt89@gmail.com**
+<br>
+<br>
+<br>
+## Bugs and possible problems
+If you have found a bug/functional problem or other please report this to the follow email address:
+> **accyt89@gmail.com**
+
+
 
 
 
