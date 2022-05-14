@@ -163,7 +163,7 @@ int main() {
 ```cpp
 std::string date;
 std::cin >> date;
-if(!check_date_string(date)) std::cout << "Invalid date" << std::endl;
+if(!Date::check_date_string(date)) std::cout << "Invalid date" << std::endl;
 ```
 > ***Note that is also considered an invalid date `1/01/1900` as it indicates a [Error Date object](#assumptions)*** 
 
