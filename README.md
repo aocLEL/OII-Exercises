@@ -143,7 +143,7 @@ Date d5{"07-21-2007", "%m-%d-%Y %H.%M.%S"}; //OK, the part of the string match t
 
 int main() {
   Date new_date{2021, 1, 1}; //date 1/01/2021 00:00:00, default format
-  Date new_date{2021, 02, 1, 0, 0, 0, "%m-%d-%Y %H.%M.%S"}; //date 02-1-2021 00.00.00 , custom format
+  Date new_date1{2021, 02, 1, 0, 0, 0, "%m-%d-%Y %H.%M.%S"}; //date 02-1-2021 00.00.00 , custom format
   
   Date d1{}, d2{"21/07/2007"}; //current date and custom string date, match with default format
   Date d3{"21-07-2007 20.45.12", "%d-%m-%Y %H.%M.%S"}; //the same date 20h 45m 12s after, match the custom format
